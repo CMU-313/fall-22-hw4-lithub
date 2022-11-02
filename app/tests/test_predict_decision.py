@@ -6,7 +6,7 @@ def test_predict_response():
     app = Flask(__name__)
     configure_routes(app)
     client = app.test_client()
-    url = '/predict/decision'
+    url = '/get-decision'
     student = {"reason": "reputation",
                "studytime": 4,
                "activities": "yes",
@@ -26,7 +26,7 @@ def test_predict_response_no_reason():
     app = Flask(__name__)
     configure_routes(app)
     client = app.test_client()
-    url = '/predict/decision/decision'
+    url = '/get-decision/decision'
     student = {"studytime": 4,
                "activities": "yes",
                "absences":92,
@@ -45,7 +45,7 @@ def test_predict_response_invalid_reason():
     app = Flask(__name__)
     configure_routes(app)
     client = app.test_client()
-    url = '/predict/decision'
+    url = '/get-decision'
     student = {"reason": 1,
                "studytime": 4,
                "activities": "yes",
@@ -65,7 +65,7 @@ def test_predict_response_no_studytime():
     app = Flask(__name__)
     configure_routes(app)
     client = app.test_client()
-    url = '/predict/decision'
+    url = '/get-decision'
     student = {"reason": "reputation",
                "activities": "yes",
                "absences":92,
@@ -84,7 +84,7 @@ def test_predict_response_invalid_studytime():
     app = Flask(__name__)
     configure_routes(app)
     client = app.test_client()
-    url = '/predict/decision'
+    url = '/get-decision'
     student = {"reason": "reputation",
                "studytime": "what is that",
                "activities": "yes",
@@ -104,7 +104,7 @@ def test_predict_response_outofbound_studytime():
     app = Flask(__name__)
     configure_routes(app)
     client = app.test_client()
-    url = '/predict/decision'
+    url = '/get-decision'
     student = {"reason": "reputation",
                "studytime": 10,
                "activities": "yes",
@@ -124,7 +124,7 @@ def test_predict_response_no_activities():
     app = Flask(__name__)
     configure_routes(app)
     client = app.test_client()
-    url = '/predict/decision'
+    url = '/get-decision'
     student = {"reason": "reputation",
                "studytime": 4,
                "absences":92,
@@ -143,7 +143,7 @@ def test_predict_response_invalid_activities():
     app = Flask(__name__)
     configure_routes(app)
     client = app.test_client()
-    url = '/predict/decision'
+    url = '/get-decision'
     student = {"reason": "reputation",
                "studytime": 4,
                "activities": "a lot",
@@ -163,7 +163,7 @@ def test_predict_response_no_absences():
     app = Flask(__name__)
     configure_routes(app)
     client = app.test_client()
-    url = '/predict/decision'
+    url = '/get-decision'
     student = {"reason": "reputation",
                "studytime": 4,
                "activities": "yes",
@@ -182,7 +182,7 @@ def test_predict_response_invalid_absences():
     app = Flask(__name__)
     configure_routes(app)
     client = app.test_client()
-    url = '/predict/decision'
+    url = '/get-decision'
     student = {"reason": "reputation",
                "studytime": 4,
                "activities": "yes",
@@ -202,7 +202,7 @@ def test_predict_response_no_higher():
     app = Flask(__name__)
     configure_routes(app)
     client = app.test_client()
-    url = '/predict/decision'
+    url = '/get-decision'
     student = {"reason": "reputation",
                "studytime": 4,
                "activities": "yes",
@@ -221,7 +221,7 @@ def test_predict_response_invalid_higher():
     app = Flask(__name__)
     configure_routes(app)
     client = app.test_client()
-    url = '/predict/decision'
+    url = '/get-decision'
     student = {"reason": "reputation",
                "studytime": 4,
                "activities": "yes",
@@ -241,7 +241,7 @@ def test_predict_response_no_traveltime():
     app = Flask(__name__)
     configure_routes(app)
     client = app.test_client()
-    url = '/predict/decision'
+    url = '/get-decision'
     student = {"reason": "reputation",
                "studytime": 4,
                "activities": "yes",
@@ -260,7 +260,7 @@ def test_predict_response_invalid_traveltime():
     app = Flask(__name__)
     configure_routes(app)
     client = app.test_client()
-    url = '/predict/decision'
+    url = '/get-decision'
     student = {"reason": "reputation",
                "studytime": 4,
                "activities": "yes",
@@ -280,7 +280,7 @@ def test_predict_response_no_failures():
     app = Flask(__name__)
     configure_routes(app)
     client = app.test_client()
-    url = '/predict/decision'
+    url = '/get-decision'
     student = {"reason": "reputation",
                "studytime": 4,
                "activities": "yes",
@@ -299,7 +299,7 @@ def test_predict_response_invalid_failures():
     app = Flask(__name__)
     configure_routes(app)
     client = app.test_client()
-    url = '/predict/decision'
+    url = '/get-decision'
     student = {"reason": "reputation",
                "studytime": 4,
                "activities": "yes",
@@ -319,7 +319,7 @@ def test_predict_response_no_Dalc():
     app = Flask(__name__)
     configure_routes(app)
     client = app.test_client()
-    url = '/predict/decision'
+    url = '/get-decision'
     student = {"reason": "reputation",
                "studytime": 4,
                "activities": "yes",
@@ -338,7 +338,7 @@ def test_predict_response_invalid_Dalc():
     app = Flask(__name__)
     configure_routes(app)
     client = app.test_client()
-    url = '/predict/decision'
+    url = '/get-decision'
     student = {"reason": "reputation",
                "studytime": 4,
                "activities": "yes",
@@ -358,7 +358,7 @@ def test_predict_response_no_Walc():
     app = Flask(__name__)
     configure_routes(app)
     client = app.test_client()
-    url = '/predict/decision'
+    url = '/get-decision'
     student = {"reason": "reputation",
                "studytime": 4,
                "activities": "yes",
@@ -377,7 +377,7 @@ def test_predict_response_invalid_Walc():
     app = Flask(__name__)
     configure_routes(app)
     client = app.test_client()
-    url = '/predict/decision'
+    url = '/get-decision'
     student = {"reason": "reputation",
                "studytime": 4,
                "activities": "yes",

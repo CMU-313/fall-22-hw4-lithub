@@ -13,3 +13,5 @@ def test_base_route():
 
     assert response.status_code == 200
     assert response.get_data() == b'try the predict route it is great!'
+
+
