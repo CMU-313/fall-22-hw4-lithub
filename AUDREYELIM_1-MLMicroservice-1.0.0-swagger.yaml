@@ -1,0 +1,105 @@
+openapi: 3.0.0
+servers:
+  # Added by API Auto Mocking Plugin
+  - description: SwaggerHub API Auto Mocking
+    url: https://virtserver.swaggerhub.com/AUDREYELIM_1/MLMicroservice/1.0.0
+info:
+  version: "1.0.0"
+  title: ml-microservice-api
+  description: The API for the ML Microservice
+paths:
+  /predict:
+    get:
+      tags:
+        - Predict
+      description: Get the ranking of a student (the output of the ML microservice) as a score between 0-20 as a function of the input features
+      operationId: getPrediction
+      parameters:
+        - in: query
+          name: studyTime
+          description: time spent studying
+          schema:
+            type: integer
+            format: int32
+        - in: query
+          name: reason
+          description: reason for pursuing a higher education
+          schema:
+            type: string
+        - in: query
+          name: activities
+          description: whether they have any extracurriculars
+          schema:
+            type: boolean
+        - in: query
+          name: absences
+          description: number of absences
+          schema:
+            type: integer
+            format: int32
+        - in: query
+          name: higher
+          description: whether they want a higher education
+          schema:
+            type: boolean
+        - in: query
+          name: traveltime
+          description: time spent commuting to school
+          schema:
+            type: integer
+            format: int32
+        - in: query
+          name: failures
+          description: number of classes failed
+          schema:
+            type: integer
+            format: int32
+        - in: query
+          name: Dalc
+          description: daily alcohol consumption
+          schema:
+            type: integer
+            format: int32
+        - in: query
+          name: Walc
+          description: weekend alcohol consumption
+          schema:
+            type: integer
+            format: int32
+      responses:
+        '200':
+          description: Student ranking
+          content:
+            application/json:
+              schema:
+                type: integer
+                format: int32
+        '500':
+          description: Server failure
+        '400':
+          description: Client failure
+  /get-decision:
+    get:
+      tags:
+        - Get-Decision
+      description: give a "yes" or "no" decision on whether a candidate should be admitted
+      operationId: add
+      parameters:
+        - name: score
+          description: score from predict
+          in: query
+          required: true
+          schema:
+            type: integer
+            format: int32
+      responses:
+        '200':
+          description: student decision is returned
+          content:
+            application/json:
+              schema:
+                type: string
+        '400':
+          description: client failure
+        '500':
+          description: server failure
