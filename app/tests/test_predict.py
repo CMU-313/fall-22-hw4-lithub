@@ -2,12 +2,20 @@ from app.handlers.routes import configure_routes
 from flask import Flask
 
 
-def test_predict_respond():
+def test_predict_response():
     app = Flask(__name__)
     configure_routes(app)
     client = app.test_client()
     url = '/predict'
-    student = {'age': 18, 'health': 5, 'absences':0}
+    student = {"reason": "reputation",
+               "studytime": 4,
+               "activities": "yes",
+               "absences":92,
+               "higher": "no",
+               "traveltime": 4,
+               "failures": 4,
+               "Dalc": 5,
+               "Walc": 5}
 
     response = client.get(url, json= student)
 
