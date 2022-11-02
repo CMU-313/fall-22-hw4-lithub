@@ -16,7 +16,7 @@ def configure_routes(app):
         return "try the predict route it is great!"
 
 
-    @app.route('/predict')
+    @app.route('/predict/decision')
     def predict():
         #use entries from the query string here but could also use json
         age = request.args.get('age')
@@ -31,3 +31,8 @@ def configure_routes(app):
         query = pd.get_dummies(query_df)
         prediction = clf.predict(query)
         return jsonify(np.asscalar(prediction))
+
+    @app.route('/predict/score')
+    def predict():
+        #use entries from the query string here but could also use json
+        return "PLACEHOLDER"
