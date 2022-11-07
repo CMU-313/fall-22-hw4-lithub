@@ -1,3 +1,9 @@
+# Student prediction Microservice
+
+This repository represent a ML microservice that predicts if a student is good or not (G3 Grade > 15).
+The features used by the ML model are: Dalc, Walc, absences, activities, failures, higher, reason, studytime and traveltime
+
+
 # HW4 Starter Code and Instructions
 
 Please consult the [homework assignment](https://cmu-313.github.io//assignments/hw4) for additional context and instructions for this code.
