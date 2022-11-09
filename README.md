@@ -13,7 +13,7 @@ The features used by the ML model are:
 - reason : Reason to choose this school (nominal: close to 'home', school 'reputation', 'course' preference or 'other')
 
 
-The model performs with an F1 score of 0.878, which is much higher than the baseline model (which had an F1 score of approximately 0.5). We chenged the columns that are included in the dataframe that the model is trained on. We felt these features were more correlated with the G3 variable, which would improve the performance of the model. We used the get_dummies command to convert the categorical variables ('activies', 'higher', and and 'reason') to numerical columns, which allowed us to use a decision tree model to determine if a student with particular statistics is good or not. The model outputs 1 if yes and 0 if no, as shown in the "Example Usage" section of the notebook.
+The model performs with an F1 score of 0.878, which is much higher than the baseline model (which had an F1 score of approximately 0.5). We changed the columns that are included in the dataframe that the model is trained on to include only the above features, which we felt were more correlated with the G3 variable and would improve the performance of the model. We used the get_dummies command to convert the categorical variables ('activies', 'higher', and and 'reason') to numerical columns, which allowed us to use a random forest classifier model to determine if a student with particular statistics is good or not. The model outputs 1 if yes and 0 if no, as shown in the "Example Usage" section of the notebook.
 
 
 # HW4 Starter Code and Instructions
