@@ -3,21 +3,17 @@
 This repository represent a ML microservice that predicts if a student is good or not (G3 Grade > 15).
 The features used by the ML model are: 
 - Dalc : Workday alcohol consumption (numeric: from 1 - very low to 5 - very high)
+- Walc : Weekend alcohol consumption (numeric: from 1 - very low to 5 - very high)
 - absences : The number of school absences (numeric: from 0 to 93). Higher number of absences tend to correlate with a lower final grade.
 - activities: Extra-curricular activities (binary: yes or no).
 - failures : Number of past class failures (numeric: n if 1<=n<3, else 4). Lower failures indicate higher final grade
 - higher : Whether student wants to take higher education (binary: yes or no). "Yes" typically indicates a bettter candidate.
 - studytime : Weekly study time (numeric: 1 - <2 hours, 2 - 2 to 5 hours, 3 - 5 to 10 hours, or 4 - >10 hours). Higher studytime correlated with higher final grade.
 - traveltime : Home to school travel time (numeric: 1 - <15 min., 2 - 15 to 30 min., 3 - 30 min. to 1 hour, or 4 - >1 hour).
-- Medu : mother's education (numeric: 0 - none, 1 - primary education (4th grade), 2 - 5th to 9th grade, 3 - secondary education or 4 - higher education)
-- Fedu :  father's education (numeric: 0 - none, 1 - primary education (4th grade), 2 - 5th to 9th grade, 3 - secondary education or 4 - higher education)
+- reason : Reason to choose this school (nominal: close to 'home', school 'reputation', 'course' preference or 'other')
 
 
-
-
-
-
-The model performs with an F1 score of 0.878, which is much higher than the baseline model (which had an F1 score of approximately 0.5)
+The model performs with an F1 score of 0.878, which is much higher than the baseline model (which had an F1 score of approximately 0.5). We chenged the columns that are included in the dataframe that the model is trained on. We felt these features were more correlated with the G3 variable, which would improve the performance of the model. We used the get_dummies command to convert the categorical variables ('activies', 'higher', and and 'reason') to numerical columns, which allowed us to use a decision tree model to determine if a student with particular statistics is good or not. The model outputs 1 if yes and 0 if no, as shown in the "Example Usage" section of the notebook.
 
 
 # HW4 Starter Code and Instructions
